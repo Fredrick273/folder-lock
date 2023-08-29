@@ -1,8 +1,8 @@
 import os
 import pyotp
 import qrcode
-import base64
-import pyarmor
+from cryptography.fernet import Fernet
+
 
 # Get the passphrase from the user
 key = input("Enter a passphrase: ")
@@ -11,7 +11,11 @@ key = input("Enter a passphrase: ")
 with open("locker.py", "r") as file:
     content = file.read()
 
+enckey = Fernet.generate_key()
+
+content = content.replace('enckey = bytes()', f'enckey = bytes({enckey})')
 content = content.replace('key = ""', f'key = "{key}"')
+
 
 with open("locker.py", "w") as file:
     file.write(content)

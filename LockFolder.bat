@@ -12,9 +12,9 @@ if EXIST "key.py" (
 python key.py
 del "key.py"
 del "locker.py"
-goto End
+goto LOCKORUNLOCK
 
 :LOCKORUNLOCK
 cd dist
 python locker.py
-goto End
+
