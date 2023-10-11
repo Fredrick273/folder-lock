@@ -27,7 +27,7 @@ Folder Lock is a simple command-line tool that allows you to lock and unlock a f
 1. Clone or download this repository to your local machine.
 2. Install the required packages by running:
    ```
-   pip install pyotp qrcode cryptography
+   pip install pyotp qrcode cryptography pyarmor
    ```
 3. Run `LockFolder.bat` to lock/unlock the folder.
 4. Follow the on-screen instructions to register the folder for the first time or lock/unlock the folder using 2FA.
